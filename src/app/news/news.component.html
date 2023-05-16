@@ -1,0 +1,21 @@
+<section class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>ข่าวสาร {{ totalResults }} ข่าว</h1>
+      <img *ngIf="isRolling" src="./assets/img/Rolling.gif" alt="" width="100">
+      <div class="card mb-3" *ngFor="let n of articles">
+        <img *ngIf="n.urlToImage" class="card-img-top" [src]="n.urlToImage" [alt]="n.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ n.title }}</h5>
+          <p class="card-text">{{ n.description }}</p>
+          <p class="card-text float-md-left">
+            <small class="text-muted">{{ n.source?.name | uppercase }}</small>
+          </p>
+          <p class="card-text float-md-right">
+            <small class="text-muted">{{ n.publishedAt | date: 'shortDate' | adtobe }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

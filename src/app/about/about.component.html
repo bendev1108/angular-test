@@ -1,0 +1,32 @@
+<section class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 [ngStyle]="{ color: 'green', backgroundColor: myColor }">{{ title }}</h3>
+      <p [ngClass]="{ title: isActive }">อายุ = {{ age }} ปี <br>
+        email: {{ info.email }}
+      </p>
+      <ul>
+        <li *ngFor="let u of users"> {{ u }}</li>
+      </ul>
+      <table class="table table-bordered">
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อคอร์ส</th>
+          <th>ราคา</th>
+        </tr>
+        <tr *ngFor="let c of cousrses, let i=index">
+          <td>{{ i+1 }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.price }}</td>
+        </tr>
+      </table>
+      <p *ngIf="isShow" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, quod, delectus ut quos architecto
+        ea earum
+        dignissimos sunt voluptates dolorem tempore unde dicta culpa ipsum quasi qui voluptatibus, soluta aliquam?</p>
+
+      <img [src]="img" [width]="imgWidth" ><br><br>
+
+      <button type="button" class="btn btn-success" (click)="go()">Click</button>
+    </div>
+  </div>
+</section>

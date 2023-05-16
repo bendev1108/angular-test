@@ -1,0 +1,14 @@
+<form *ngIf="!isLogin" (ngSubmit)="login()" [formGroup]="loginForm" class="form-inline mt-2 mt-md-0">
+  <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="Email">
+  <input formControlName="password" class="form-control mr-sm-2" type="password" placeholder="Password">
+  <button [disabled]="loginForm.invalid" class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+</form>
+
+<img *ngIf="isLogin && profile?.picture" [src]="profile?.picture" width="50" height="50" class="d-inline-block align-top mr-3"
+  alt="">
+
+<span *ngIf="isLogin" class="navbar-text mr-3">
+  ยินดีต้อนรับ {{ profile?.nickname }}
+</span>
+
+<button *ngIf="isLogin" (click)="logout()" class="btn btn-danger my-2 my-sm-0">Logout</button>

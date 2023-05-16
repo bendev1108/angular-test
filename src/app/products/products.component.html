@@ -1,0 +1,30 @@
+<section class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">คอร์สเรียน</th>
+            <th scope="col">วันที่</th>
+            <th scope="col">จำนวนผู้เข้าชม</th>
+            <th scope="col">เครื่องมือ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of products">
+            <th scope="row">{{ p.id }}</th>
+            <td>{{ p.c_title }}</td>
+            <td>{{ p.c_date }}</td>
+            <td>{{ p.c_view }}</td>
+            <td>
+              <a [routerLink]="['/products', p.id, p.c_title]">
+                <i class="material-icons">&#xe8f4;</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
